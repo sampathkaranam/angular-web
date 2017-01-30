@@ -1,11 +1,13 @@
 (function (){
+'use strict';
    var app = angular.module('LunchCheck',[])
-   app.controller('LunchCheckController',function($scope){
+   app.controller('LunchCheckController',LunchCheckController);
+   LunchCheckController.$inject=['$scope'];
+   function LunchCheckController($scope){
 	$scope.itemList = "";
 	var separator = ',';
-	$scope.count=0;
 	$scope.check = function(){
-
+    $scope.count=0;
 	var stringArray = $scope.itemList;
 	var splitArray = stringArray.split(',');
     angular.forEach(splitArray,function(value){
@@ -13,6 +15,7 @@
 			$scope.count++;
 	    }
 	});
+	alert($scope.count);
 	if($scope.count<= 3  && $scope.count > 0)
 	{
 		$scope.message = "Enjoy!";
@@ -38,6 +41,6 @@
 		$scope.colorClass="red";
 		$scope.borderClass="borderRed";
 	}
-   });
+   }
 
 })(); 
