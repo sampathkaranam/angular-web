@@ -7,7 +7,7 @@
 	$scope.itemList = "";
 	var separator = ',';
 	$scope.check = function(){
-    $scope.count=0;
+        $scope.count=0;
 	var stringArray = $scope.itemList;
 	var splitArray = stringArray.split(',');
     angular.forEach(splitArray,function(value){
@@ -15,11 +15,10 @@
 			$scope.count++;
 	    }
 	});
-	alert($scope.count);
 	if($scope.count<= 3  && $scope.count > 0)
 	{
 		$scope.message = "Enjoy!";
-        $scope.turnGreen();		
+                $scope.turnGreen();		
 	}
 	else if($scope.count > 3)
 	{
